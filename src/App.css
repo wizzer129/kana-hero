@@ -1,0 +1,10 @@
+#root {
+    background-color: darksalmon;
+}
+
+.Landing {
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    background-color: white;
+}
