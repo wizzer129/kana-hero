@@ -1,10 +1,59 @@
 #root {
-    background-color: darksalmon;
+    width: 100%;
+    height: 100%;
 }
 
-.Landing {
-    align-items: center;
-    justify-content: center;
-    height: 20rem;
-    background-color: white;
+.Landing-Container {
+    background-color: rgb(255, 255, 255, 0);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.Menu-Circle {
+    z-index: -1;
+    background-color: rgb(153, 65, 65);
+    width: 90rem;
+    height: 45rem;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.Smiley-Face {
+    font-size: 17em;
+    top: 66%;
+    text-align: center;
+    position: absolute;
+    -webkit-animation: smiley-animation 40s linear infinite alternate; /* Chrome, Safari, Opera */
+    animation: smiley-animation 20s linear infinite alternate;
+}
+
+@-webkit-keyframes smiley-animation {
+    0%,
+    100% {
+        transform: translate(40%, 0);
+    }
+
+    50% {
+        transform: translate(200%, 0);
+    }
+}
+
+@keyframes smiley-animation {
+    0%,
+    100% {
+        transform: translate(40%, 0);
+    }
+
+    50% {
+        transform: translate(200%, 0);
+    }
+
+    80% {
+        transform: translate(150%, 0);
+    }
 }
