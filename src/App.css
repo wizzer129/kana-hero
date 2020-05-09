@@ -16,8 +16,9 @@
     width: 90rem;
     height: 45rem;
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    position: absolute;
-    top: 68%;
+    position: fixed;
+    overflow: hidden;
+    top: 48rem;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -25,35 +26,213 @@
 
 .Smiley-Face {
     font-size: 17em;
+    font-family: Arial, Helvetica, sans-serif;
     top: 66%;
     text-align: center;
     position: absolute;
     -webkit-animation: smiley-animation 40s linear infinite alternate; /* Chrome, Safari, Opera */
-    animation: smiley-animation 20s linear infinite alternate;
+    animation: smiley-animation 40s linear infinite alternate;
 }
 
 @-webkit-keyframes smiley-animation {
     0%,
     100% {
-        transform: translate(40%, 0);
+        transform: translate(70%, 0);
     }
 
     50% {
-        transform: translate(200%, 0);
+        transform: translate(240%, 0);
     }
 }
 
 @keyframes smiley-animation {
     0%,
     100% {
-        transform: translate(40%, 0);
+        transform: translate(70%, 0);
     }
 
     50% {
-        transform: translate(200%, 0);
+        transform: translate(240%, 0);
+    }
+}
+
+.Flying-Kana-Container {
+    font-size: 30px;
+    color: black;
+    position: fixed;
+    overflow: hidden;
+
+    height: 100%;
+    width: 100%;
+}
+
+.flying-kana-1 {
+    position: absolute;
+    top: 5%;
+    left: -10%;
+    transform: scale(1);
+    will-change: transform;
+    animation: flying-kana-3 10s linear infinite;
+}
+
+.flying-kana-2 {
+    position: absolute;
+    top: 15%;
+    left: -10%;
+    transform: scale(1.5);
+    animation: flying-kana-3 15s linear infinite;
+}
+
+.flying-kana-3 {
+    position: absolute;
+    top: 25%;
+    left: -10%;
+    transform: scale(3.5);
+    animation: flying-kana-3 12s linear infinite;
+}
+
+.flying-kana-4 {
+    position: absolute;
+    top: 35%;
+    left: -10%;
+    transform: scale(1);
+    animation: flying-kana-3 18s linear infinite;
+}
+
+.flying-kana-5 {
+    position: absolute;
+    top: 45%;
+    left: -10%;
+    transform: scale(5);
+    animation: flying-kana-3 16s linear infinite;
+}
+
+@-webkit-keyframes flying-kana-1 {
+    0% {
+        transform: scale(0.3) translateX(-10vw);
+    }
+
+    10% {
+        transform: translateY(2vh) translateX(10vw) scale(1.4);
+    }
+
+    20% {
+        transform: translateY(0vh) translateX(30vw) scale(1.5);
+    }
+
+    30% {
+        transform: translateY(4vh) translateX(50vw) scale(1.6);
+    }
+
+    40% {
+        transform: translateY(2vh) translateX(70vw) scale(1.6);
+    }
+
+    50% {
+        transform: translateY(0vh) translateX(90vw) scale(1.6);
+    }
+
+    60% {
+        transform: translateY(0vh) translateX(110vw) scale(1.6);
+    }
+
+    100% {
+        transform: translateY(0vh) translateX(150vw) scale(1.6);
+    }
+}
+
+@keyframes flying-kana-1 {
+    10% {
+        transform: translateY(2vh) translateX(10vw) scale(1.4);
+    }
+
+    20% {
+        transform: translateY(0vh) translateX(30vw) scale(1.5);
+    }
+
+    30% {
+        transform: translateY(4vh) translateX(50vw) scale(1.6);
+    }
+
+    40% {
+        transform: translateY(2vh) translateX(70vw) scale(1.6);
+    }
+
+    50% {
+        transform: translateY(0vh) translateX(90vw) scale(1.6);
+    }
+
+    60% {
+        transform: translateY(0vh) translateX(110vw) scale(1.6);
+    }
+
+    100% {
+        transform: translateY(0vh) translateX(150vw) scale(1.6);
+    }
+}
+
+@keyframes flying-kana-2 {
+    0% {
+        transform: translateY(10vh) translateX(0vw) scale(1.4);
+    }
+    10% {
+        transform: translateY(11vh) translateX(20vw) scale(1.4);
+    }
+
+    20% {
+        transform: translateY(12vh) translateX(30vw) scale(1.5);
+    }
+
+    30% {
+        transform: translateY(13vh) translateX(50vw) scale(1.6);
+    }
+
+    40% {
+        transform: translateY(14vh) translateX(70vw) scale(1.6);
+    }
+
+    50% {
+        transform: translateY(15vh) translateX(90vw) scale(1.6);
+    }
+
+    60% {
+        transform: translateY(13vh) translateX(110vw) scale(1.6);
+    }
+
+    70% {
+        transform: translateY(15vh) translateX(130vw) scale(1.6);
     }
 
     80% {
-        transform: translate(150%, 0);
+        transform: translateY(16vh) translateX(150vw) scale(1.6);
+    }
+
+    90% {
+        transform: translateY(13vh) translateX(170vw) scale(1.6);
+    }
+
+    100% {
+        transform: translateY(10vh) translateX(190vw) scale(1.6);
+    }
+}
+
+@keyframes flying-kana-3 {
+    0% {
+        transform: translateY(10vh) translateX(0vw);
+    }
+    25% {
+        transform: translateY(14vh) translateX(30vw);
+    }
+
+    50% {
+        transform: translateY(17vh) translateX(60vw);
+    }
+
+    75% {
+        transform: translateY(12vh) translateX(90vw);
+    }
+
+    100% {
+        transform: translateY(16vh) translateX(120vw);
     }
 }

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Grid, Header, Segment } from 'semantic-ui-react';
+import Smiley from '../landing/Smiley';
 
 const Landing = () => {
     return (
         <div className='Landing-Container'>
             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
                 <Grid.Column style={{ maxWidth: 450 }}>
-                    <Header as='h2' color='teal' textAlign='center'>
+                    <Header as='h1' color='teal' textAlign='center'>
                         Kana Hero かなヒーロー
                     </Header>
 
@@ -16,13 +17,11 @@ const Landing = () => {
                     </Button>
                     <br />
                     <Button as={Link} color='teal' fluid size='large' to='/dragNdrop'>
-                        Match Kana
+                        Drag 'N Drop Kana Game
                     </Button>
                 </Grid.Column>
             </Grid>
-            <div className='Menu-Circle'>
-                <div className='Smiley-Face'>･ᴗ･</div>
-            </div>
+            <Smiley />
         </div>
     );
 };
