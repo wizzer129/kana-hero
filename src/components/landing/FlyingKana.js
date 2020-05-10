@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import kana from '../../data/kana';
+import { connect } from 'react-redux';
 
 const vowels = ['a', 'i', 'u', 'e', 'o'];
 const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
-const getRandomKana = () => {
-    const randomKanaColumn = randomNumber(1, 7);
-    return vowels.map((vowel) => {
-        return kana[`${vowel}${randomKanaColumn}`].hiragana;
-    });
+const shuffle = (arr) => {
+    var j, x, i;
+    for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = arr[i];
+        arr[i] = arr[j];
+        arr[j] = x;
+    }
+    return arr;
 };
 
 const GenerateFlyingKana = ({ kanaCharacters }) => {
@@ -25,8 +29,17 @@ const GenerateFlyingKana = ({ kanaCharacters }) => {
     });
 };
 
-const FlyingKana = () => {
-    const [currentKana, setKana] = useState(getRandomKana());
+const FlyingKana = ({ kana }) => {
+    const getRandomKana = (kana) => {
+        const randomKanaColumn = randomNumber(1, 7);
+        console.log(randomKanaColumn);
+        if (kana === null) return [];
+        return vowels.map((vowel) => {
+            return kana[`${vowel}${randomKanaColumn}`].hiragana;
+        });
+    };
+
+    const [currentKana, setKana] = useState(getRandomKana(kana.kana));
 
     return (
         <div className='Flying-Kana-Container'>
@@ -35,4 +48,8 @@ const FlyingKana = () => {
     );
 };
 
-export default FlyingKana;
+const mapStateToProps = (state) => ({
+    kana: state.kana,
+});
+
+export default connect(mapStateToProps, null)(FlyingKana);

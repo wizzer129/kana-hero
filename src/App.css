@@ -3,6 +3,18 @@
     height: 100%;
 }
 
+.homepage-loading {
+    margin: 0 auto;
+
+    height: 150px;
+    width: 150px;
+    position: relative;
+    border-radius: 50%;
+    background: linear-gradient(to right, #f06724, #3b4371);
+    -webkit-animation: rotate 0.75s infinite linear;
+    animation: rotate 0.75s infinite linear;
+}
+
 .Landing-Container {
     background-color: rgb(255, 255, 255, 0);
     width: 100%;

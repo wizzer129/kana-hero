@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Landing from '../layout/Landing';
-import Smiley from '../landing/Smiley';
-import FlyingKana from '../landing/FlyingKana';
+import HomePageLoader from '../loaders/HomePageLoader';
 
-const Routes = (props) => {
+const Routes = ({ isKanaLoading }) => {
     return (
         <Router>
-            <FlyingKana />
             <Switch>
-                <Route exact path='/' component={Landing} />
+                <Route exact path='/' render={(props) => (isKanaLoading ? <HomePageLoader /> : <Landing />)} />
             </Switch>
         </Router>
     );
 };
 
-export default Routes;
+const mapStateToProps = (state) => ({
+    isKanaLoading: state.kana.loading,
+});
+
+export default connect(mapStateToProps, null)(Routes);

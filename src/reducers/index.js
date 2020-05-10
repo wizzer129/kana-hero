@@ -1,9 +1,6 @@
-const initialState = {
-    message: 'initial',
-};
+import { combineReducers } from 'redux';
+import kana from './kana';
 
-function reducer(state = initialState) {
-    return state;
-}
-
-export default reducer;
+export default combineReducers({
+    kana,
+});
