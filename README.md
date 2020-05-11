@@ -1,6 +1,6 @@
-# Kana Master
+# Kana Hero
 
 ---
 
-A tool that assists anyone attempting to learning Hiragana and Katakana in the form of a game.
-Will be deploted on kana.alazo.io
+A site for english speakers attempting to learning Hiragana and Katakana characters.
+Will be deployed on kana.alazo.io
